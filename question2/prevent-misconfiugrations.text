@@ -1,0 +1,2 @@
+The CI/CD pipeline is the most critical layer thus can use lint files or more sophisticated tools like snyk which can be embedded in Ci/Cd.
+Cloudwatch, AWS config and configuring alters, and using SCP rules can work for cloudwatch if we are spinnign off resources on AWS.

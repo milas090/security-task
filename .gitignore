@@ -1,0 +1,8 @@
+question1/
+question2/
+question4/
+question5/
+question3/scanner/aws/
+question3/scanner/results.json
+*.swp
+*.env
