@@ -1,6 +1,0 @@
-1- (extremely) outdated base image
-2- lots of packages added by apt-get install that aren't really needed at runtime
-3- obviously, baked-in secrets (do people still do it??)
-4- RUN chmod essentially doubles the app layer size
-5- CMD implicitly introduces a shell into the process tree (likely breaking graceful termination)
-(likely) runs as root
