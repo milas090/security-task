@@ -198,19 +198,16 @@ def main():
     print()
     input("Press Enter to start...")
 
-    fetchers = [
-        AWSFetcher(),
-        GCPFetcher(),
-        AzureFetcher(),
-    ]
+    fetcher_classes = [AWSFetcher, GCPFetcher, AzureFetcher]
 
     all_buckets = []
-    for fetcher in fetchers:
+    for fetcher_class in fetcher_classes:
         try:
+            fetcher = fetcher_class()
             buckets = fetcher.fetch()
             all_buckets.extend(buckets)
         except Exception as e:
-            print(f"warning: {e}")
+            print(f"warning ({fetcher_class.cloud_name}): {e}")
             continue
 
     write_csv(all_buckets)
