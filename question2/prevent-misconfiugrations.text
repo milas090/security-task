@@ -1,0 +1,3 @@
+The CI/CD pipeline is the most critical enforcement layer. Linters and scanning tools like Snyk can be embedded directly into the pipeline to catch issues before any code is merged or deployed.
+
+On the AWS side, CloudWatch and AWS Config can be configured with rules and alerts to detect misconfigurations on resources that are already running. SCP rules add another layer of control at the organization level, preventing misconfigured resources from being spun up in the first place.

@@ -1,0 +1,3 @@
+1- The IAM inline policy uses wildcards for both actions and resources (Action: "*", Resource: "*") which grants full administrative access and violates AWS least privilege guidance.
+2- A highly privileged inline policy is attached directly to an IAM user, rather than using a role.
+3- The S3 bucket is created without explicit security settings such as BucketEncryption or PublicAccessBlockConfiguration

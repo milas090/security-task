@@ -1,0 +1,9 @@
+1- (extremely) outdated base image
+2- lots of packages added by apt-get install that aren't really needed at runtime
+3- obviously, baked-in secrets (do people still do it??)
+4- RUN chmod essentially doubles the app layer size
+5- CMD implicitly introduces a shell into the process tree (likely breaking graceful termination)
+6- USER root is explicitly set on line 3. The container runs as UID 0 by default and this line confirms it. A non-root user should be created and set:
+   RUN useradd -r appuser
+   USER appuser
+7- No package version pinning in apt-get install — builds are non-reproducible and a future apt-get could pull a vulnerable version silently
